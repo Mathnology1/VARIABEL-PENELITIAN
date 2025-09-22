@@ -54,7 +54,7 @@
                     <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
                         <span class="text-2xl">🔗</span>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Variabel Intervening</h3>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Variabel Mediasi</h3>
                     <p class="text-gray-600 text-sm">Intervening Variable</p>
                     <p class="text-gray-500 text-xs mt-2">Variabel perantara</p>
                 </div>
@@ -66,8 +66,8 @@
                     <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
                         <span class="text-2xl">⚖️</span>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Variabel Moderating</h3>
-                    <p class="text-gray-600 text-sm">Moderating Variable</p>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Variabel Moderasi</h3>
+                    <p class="text-gray-600 text-sm">Moderation Variable</p>
                     <p class="text-gray-500 text-xs mt-2">Variabel pemoderasi</p>
                 </div>
             </div>
@@ -173,7 +173,7 @@
                 color: "green"
             },
             intervening: {
-                title: "🔗 Variabel Intervening (Intervening Variable)",
+                title: "🔗 Variabel Mediasi (Intervening Variable)",
                 definition: "Variabel perantara dalam proses bisnis yang menjelaskan mekanisme bagaimana variabel bebas mempengaruhi variabel terikat. Variabel ini penting untuk memahami proses bisnis.",
                 characteristics: [
                     "Menjelaskan proses bisnis internal",
@@ -190,7 +190,7 @@
                 color: "purple"
             },
             moderating: {
-                title: "⚖️ Variabel Moderating (Moderating Variable)",
+                title: "⚖️ Variabel Moderasi (Moderation Variable)",
                 definition: "Variabel yang memperkuat atau memperlemah hubungan bisnis antara variabel bebas dan terikat. Variabel ini menentukan kondisi kapan strategi bisnis efektif.",
                 characteristics: [
                     "Mempengaruhi efektivitas strategi bisnis",
@@ -250,27 +250,27 @@
             },
             {
                 question: "Dalam konteks bisnis e-commerce, 'kepercayaan konsumen' yang menghubungkan antara 'kualitas website' dan 'keputusan pembelian' merupakan:",
-                options: ["Variabel Bebas", "Variabel Terikat", "Variabel Intervening", "Variabel Moderating"],
+                options: ["Variabel Bebas", "Variabel Terikat", "Variabel Mediasi", "Variabel Moderasi"],
                 correct: 2,
-                explanation: "Kepercayaan konsumen adalah variabel intervening karena memediasi hubungan antara kualitas website dan keputusan pembelian."
+                explanation: "Kepercayaan konsumen adalah variabel mediasi karena memediasi hubungan antara kualitas website dan keputusan pembelian."
             },
             {
                 question: "Dalam penelitian pengaruh program pelatihan terhadap kinerja karyawan, jika 'tingkat pendidikan' mempengaruhi seberapa efektif pelatihan tersebut, maka tingkat pendidikan adalah:",
-                options: ["Variabel Bebas", "Variabel Terikat", "Variabel Intervening", "Variabel Moderating"],
+                options: ["Variabel Bebas", "Variabel Terikat", "Variabel Mediasi", "Variabel Moderasi"],
                 correct: 3,
-                explanation: "Tingkat pendidikan adalah variabel moderating karena mempengaruhi kekuatan hubungan antara pelatihan dan kinerja karyawan."
+                explanation: "Tingkat pendidikan adalah variabel moderasi karena mempengaruhi kekuatan hubungan antara pelatihan dan kinerja karyawan."
             },
             {
                 question: "Perusahaan retail ingin meneliti pengaruh 'lokasi toko' terhadap 'omzet penjualan'. Dalam penelitian ini, omzet penjualan berperan sebagai:",
-                options: ["Variabel Bebas", "Variabel Terikat", "Variabel Intervening", "Variabel Moderating"],
+                options: ["Variabel Bebas", "Variabel Terikat", "Variabel Mediasi", "Variabel Moderasi"],
                 correct: 1,
                 explanation: "Omzet penjualan adalah variabel terikat karena merupakan hasil yang dipengaruhi oleh lokasi toko."
             },
             {
                 question: "Dalam studi marketing, 'kondisi ekonomi' yang mempengaruhi efektivitas hubungan antara 'budget iklan' dan 'peningkatan penjualan' merupakan:",
-                options: ["Variabel Bebas", "Variabel Terikat", "Variabel Intervening", "Variabel Moderating"],
+                options: ["Variabel Bebas", "Variabel Terikat", "Variabel Mediasi", "Variabel Moderasi"],
                 correct: 3,
-                explanation: "Kondisi ekonomi adalah variabel moderating karena mempengaruhi seberapa kuat pengaruh budget iklan terhadap penjualan."
+                explanation: "Kondisi ekonomi adalah variabel moderasi karena mempengaruhi seberapa kuat pengaruh budget iklan terhadap penjualan."
             }
         ];
 
@@ -345,7 +345,7 @@
                     <div class="flex items-center p-3 bg-purple-50 rounded-lg">
                         <span class="text-2xl mr-3">🔗</span>
                         <div>
-                            <span class="font-medium text-purple-800">Variabel Intervening:</span>
+                            <span class="font-medium text-purple-800">Variabel Mediasi:</span>
                             <span class="text-purple-600"> ${scenario.variables.intervening}</span>
                         </div>
                     </div>
@@ -353,7 +353,7 @@
                     <div class="flex items-center p-3 bg-orange-50 rounded-lg">
                         <span class="text-2xl mr-3">⚖️</span>
                         <div>
-                            <span class="font-medium text-orange-800">Variabel Moderating:</span>
+                            <span class="font-medium text-orange-800">Variabel Moderasi:</span>
                             <span class="text-orange-600"> ${scenario.variables.moderating}</span>
                         </div>
                     </div>
@@ -423,5 +423,5 @@
         // Initialize first quiz question
         nextQuestion();
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'982d8aba162862dc',t:'MTc1ODQ5OTQzNC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'982d941d75f05fb7',t:'MTc1ODQ5OTgxOS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
