@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jenis-Jenis Variabel Penelitian</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
+        .fade-in { animation: fadeIn 0.5s ease-in; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <!-- Header -->
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-gray-800 mb-4">💼 Variabel Penelitian Ekonomi & Bisnis</h1>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">Pelajari jenis-jenis variabel dalam penelitian ekonomi dan bisnis dengan contoh kasus nyata dari dunia usaha</p>
+        </div>
+
+        <!-- Variable Cards Grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <!-- Variabel Bebas -->
+            <div class="bg-white rounded-xl shadow-lg p-6 card-hover cursor-pointer" onclick="showDetail('bebas')">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">🎯</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Variabel Bebas</h3>
+                    <p class="text-gray-600 text-sm">Independent Variable</p>
+                    <p class="text-gray-500 text-xs mt-2">Variabel yang mempengaruhi</p>
+                </div>
+            </div>
+
+            <!-- Variabel Terikat -->
+            <div class="bg-white rounded-xl shadow-lg p-6 card-hover cursor-pointer" onclick="showDetail('terikat')">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">📈</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Variabel Terikat</h3>
+                    <p class="text-gray-600 text-sm">Dependent Variable</p>
+                    <p class="text-gray-500 text-xs mt-2">Variabel yang dipengaruhi</p>
+                </div>
+            </div>
+
+            <!-- Variabel Intervening -->
+            <div class="bg-white rounded-xl shadow-lg p-6 card-hover cursor-pointer" onclick="showDetail('intervening')">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">🔗</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Variabel Intervening</h3>
+                    <p class="text-gray-600 text-sm">Intervening Variable</p>
+                    <p class="text-gray-500 text-xs mt-2">Variabel perantara</p>
+                </div>
+            </div>
+
+            <!-- Variabel Moderating -->
+            <div class="bg-white rounded-xl shadow-lg p-6 card-hover cursor-pointer" onclick="showDetail('moderating')">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">⚖️</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Variabel Moderating</h3>
+                    <p class="text-gray-600 text-sm">Moderating Variable</p>
+                    <p class="text-gray-500 text-xs mt-2">Variabel pemoderasi</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Detail Section -->
+        <div id="detailSection" class="bg-white rounded-xl shadow-lg p-8 mb-8 hidden fade-in">
+            <div id="detailContent"></div>
+        </div>
+
+        <!-- Interactive Example -->
+        <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">📈 Contoh Interaktif: Penelitian Bisnis</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Scenario Builder -->
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-700 mb-4">Pilih Skenario Penelitian Bisnis:</h3>
+                    <div class="space-y-3">
+                        <button onclick="setScenario('harga')" class="w-full text-left p-4 bg-blue-50 hover:bg-blue-100 rounded-lg transition-colors">
+                            <span class="font-medium">Pengaruh Harga terhadap Penjualan</span>
+                        </button>
+                        <button onclick="setScenario('iklan')" class="w-full text-left p-4 bg-green-50 hover:bg-green-100 rounded-lg transition-colors">
+                            <span class="font-medium">Pengaruh Iklan terhadap Brand Awareness</span>
+                        </button>
+                        <button onclick="setScenario('gaji')" class="w-full text-left p-4 bg-purple-50 hover:bg-purple-100 rounded-lg transition-colors">
+                            <span class="font-medium">Pengaruh Gaji terhadap Produktivitas</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Scenario Display -->
+                <div id="scenarioDisplay" class="bg-gray-50 rounded-lg p-6">
+                    <p class="text-gray-600 text-center">Pilih skenario penelitian untuk melihat contoh variabel-variabelnya</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quiz Section -->
+        <div class="bg-white rounded-xl shadow-lg p-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">🎯 Kuis Pemahaman</h2>
+            
+            <div id="quizContainer">
+                <div class="mb-6">
+                    <p class="text-lg text-gray-700 mb-4" id="quizQuestion">Dalam penelitian "Pengaruh Gaya Kepemimpinan terhadap Kinerja Karyawan dengan Motivasi sebagai Variabel Perantara", manakah yang merupakan variabel bebas?</p>
+                    
+                    <div class="space-y-3">
+                        <button onclick="checkAnswer(0)" class="quiz-option w-full text-left p-4 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors">
+                            A. Kinerja Karyawan
+                        </button>
+                        <button onclick="checkAnswer(1)" class="quiz-option w-full text-left p-4 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors">
+                            B. Gaya Kepemimpinan
+                        </button>
+                        <button onclick="checkAnswer(2)" class="quiz-option w-full text-left p-4 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors">
+                            C. Motivasi
+                        </button>
+                        <button onclick="checkAnswer(3)" class="quiz-option w-full text-left p-4 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors">
+                            D. Semua jawaban benar
+                        </button>
+                    </div>
+                </div>
+
+                <div id="quizResult" class="hidden p-4 rounded-lg mb-4"></div>
+                <button onclick="nextQuestion()" id="nextBtn" class="hidden bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">Soal Berikutnya</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const variableDetails = {
+            bebas: {
+                title: "🎯 Variabel Bebas (Independent Variable)",
+                definition: "Variabel yang mempengaruhi atau menjadi sebab perubahan variabel lain dalam konteks ekonomi dan bisnis. Variabel ini dimanipulasi atau diubah oleh peneliti atau manajer.",
+                characteristics: [
+                    "Merupakan variabel penyebab dalam bisnis",
+                    "Dapat dikendalikan oleh manajemen",
+                    "Mempengaruhi kinerja bisnis",
+                    "Biasanya dilambangkan dengan X"
+                ],
+                examples: [
+                    "Harga produk → Volume penjualan",
+                    "Budget iklan → Brand awareness",
+                    "Tingkat gaji → Produktivitas karyawan",
+                    "Kualitas layanan → Kepuasan pelanggan"
+                ],
+                color: "blue"
+            },
+            terikat: {
+                title: "📈 Variabel Terikat (Dependent Variable)",
+                definition: "Variabel yang dipengaruhi atau menjadi akibat dari variabel bebas dalam konteks bisnis. Variabel ini menjadi indikator kinerja yang ingin dicapai perusahaan.",
+                characteristics: [
+                    "Merupakan hasil atau outcome bisnis",
+                    "Dipengaruhi oleh keputusan manajemen",
+                    "Menjadi target pencapaian perusahaan",
+                    "Biasanya dilambangkan dengan Y"
+                ],
+                examples: [
+                    "Volume penjualan ← Harga produk",
+                    "Brand awareness ← Budget iklan",
+                    "Produktivitas karyawan ← Tingkat gaji",
+                    "Kepuasan pelanggan ← Kualitas layanan"
+                ],
+                color: "green"
+            },
+            intervening: {
+                title: "🔗 Variabel Intervening (Intervening Variable)",
+                definition: "Variabel perantara dalam proses bisnis yang menjelaskan mekanisme bagaimana variabel bebas mempengaruhi variabel terikat. Variabel ini penting untuk memahami proses bisnis.",
+                characteristics: [
+                    "Menjelaskan proses bisnis internal",
+                    "Memediasi hubungan sebab-akibat",
+                    "Sering berupa faktor psikologis/behavioral",
+                    "Menjelaskan 'mengapa' strategi berhasil"
+                ],
+                examples: [
+                    "Persepsi nilai (antara harga dan keputusan beli)",
+                    "Motivasi kerja (antara insentif dan kinerja)",
+                    "Brand image (antara iklan dan loyalitas)",
+                    "Kepuasan kerja (antara gaji dan retensi karyawan)"
+                ],
+                color: "purple"
+            },
+            moderating: {
+                title: "⚖️ Variabel Moderating (Moderating Variable)",
+                definition: "Variabel yang memperkuat atau memperlemah hubungan bisnis antara variabel bebas dan terikat. Variabel ini menentukan kondisi kapan strategi bisnis efektif.",
+                characteristics: [
+                    "Mempengaruhi efektivitas strategi bisnis",
+                    "Menentukan kondisi optimal",
+                    "Berinteraksi dengan faktor utama",
+                    "Membantu segmentasi pasar/karyawan"
+                ],
+                examples: [
+                    "Segmen pasar (memoderasi hubungan harga-penjualan)",
+                    "Kondisi ekonomi (memoderasi hubungan iklan-penjualan)",
+                    "Usia karyawan (memoderasi hubungan gaji-motivasi)",
+                    "Tingkat kompetisi (memoderasi hubungan kualitas-loyalitas)"
+                ],
+                color: "orange"
+            }
+        };
+
+        const scenarios = {
+            harga: {
+                title: "Pengaruh Strategi Harga terhadap Volume Penjualan",
+                variables: {
+                    bebas: "Tingkat Harga Produk",
+                    terikat: "Volume Penjualan",
+                    intervening: "Persepsi Nilai Pelanggan",
+                    moderating: "Segmen Pasar (Premium vs Ekonomis)"
+                },
+                explanation: "Harga mempengaruhi penjualan melalui persepsi nilai pelanggan, dengan efek yang berbeda pada segmen pasar premium dan ekonomis."
+            },
+            iklan: {
+                title: "Pengaruh Budget Iklan terhadap Brand Awareness",
+                variables: {
+                    bebas: "Budget Iklan Digital",
+                    terikat: "Tingkat Brand Awareness",
+                    intervening: "Frekuensi Exposure Iklan",
+                    moderating: "Kondisi Ekonomi Makro"
+                },
+                explanation: "Budget iklan meningkatkan brand awareness melalui frekuensi exposure, dengan efektivitas yang dipengaruhi kondisi ekonomi."
+            },
+            gaji: {
+                title: "Pengaruh Sistem Kompensasi terhadap Produktivitas Karyawan",
+                variables: {
+                    bebas: "Tingkat Gaji & Insentif",
+                    terikat: "Produktivitas Karyawan",
+                    intervening: "Motivasi & Kepuasan Kerja",
+                    moderating: "Generasi Karyawan (Gen X, Y, Z)"
+                },
+                explanation: "Kompensasi meningkatkan produktivitas melalui motivasi kerja, dengan respons yang berbeda antar generasi karyawan."
+            }
+        };
+
+        const quizData = [
+            {
+                question: "Dalam penelitian 'Pengaruh Harga Produk terhadap Volume Penjualan dengan Brand Image sebagai Variabel Perantara', manakah yang merupakan variabel terikat?",
+                options: ["Harga Produk", "Volume Penjualan", "Brand Image", "Semua jawaban benar"],
+                correct: 1,
+                explanation: "Volume Penjualan adalah variabel terikat karena merupakan hasil yang dipengaruhi oleh harga produk."
+            },
+            {
+                question: "Dalam konteks bisnis e-commerce, 'kepercayaan konsumen' yang menghubungkan antara 'kualitas website' dan 'keputusan pembelian' merupakan:",
+                options: ["Variabel Bebas", "Variabel Terikat", "Variabel Intervening", "Variabel Moderating"],
+                correct: 2,
+                explanation: "Kepercayaan konsumen adalah variabel intervening karena memediasi hubungan antara kualitas website dan keputusan pembelian."
+            },
+            {
+                question: "Dalam penelitian pengaruh program pelatihan terhadap kinerja karyawan, jika 'tingkat pendidikan' mempengaruhi seberapa efektif pelatihan tersebut, maka tingkat pendidikan adalah:",
+                options: ["Variabel Bebas", "Variabel Terikat", "Variabel Intervening", "Variabel Moderating"],
+                correct: 3,
+                explanation: "Tingkat pendidikan adalah variabel moderating karena mempengaruhi kekuatan hubungan antara pelatihan dan kinerja karyawan."
+            },
+            {
+                question: "Perusahaan retail ingin meneliti pengaruh 'lokasi toko' terhadap 'omzet penjualan'. Dalam penelitian ini, omzet penjualan berperan sebagai:",
+                options: ["Variabel Bebas", "Variabel Terikat", "Variabel Intervening", "Variabel Moderating"],
+                correct: 1,
+                explanation: "Omzet penjualan adalah variabel terikat karena merupakan hasil yang dipengaruhi oleh lokasi toko."
+            },
+            {
+                question: "Dalam studi marketing, 'kondisi ekonomi' yang mempengaruhi efektivitas hubungan antara 'budget iklan' dan 'peningkatan penjualan' merupakan:",
+                options: ["Variabel Bebas", "Variabel Terikat", "Variabel Intervening", "Variabel Moderating"],
+                correct: 3,
+                explanation: "Kondisi ekonomi adalah variabel moderating karena mempengaruhi seberapa kuat pengaruh budget iklan terhadap penjualan."
+            }
+        ];
+
+        let currentQuiz = 0;
+        let quizAnswered = false;
+
+        function showDetail(type) {
+            const detail = variableDetails[type];
+            const section = document.getElementById('detailSection');
+            const content = document.getElementById('detailContent');
+            
+            content.innerHTML = `
+                <div class="text-center mb-6">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">${detail.title}</h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">${detail.definition}</p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-700 mb-4">📋 Karakteristik:</h3>
+                        <ul class="space-y-2">
+                            ${detail.characteristics.map(char => `
+                                <li class="flex items-center text-gray-600">
+                                    <span class="w-2 h-2 bg-${detail.color}-500 rounded-full mr-3"></span>
+                                    ${char}
+                                </li>
+                            `).join('')}
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-700 mb-4">💡 Contoh:</h3>
+                        <ul class="space-y-2">
+                            ${detail.examples.map(example => `
+                                <li class="text-gray-600 bg-${detail.color}-50 p-3 rounded-lg">
+                                    ${example}
+                                </li>
+                            `).join('')}
+                        </ul>
+                    </div>
+                </div>
+            `;
+            
+            section.classList.remove('hidden');
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function setScenario(type) {
+            const scenario = scenarios[type];
+            const display = document.getElementById('scenarioDisplay');
+            
+            display.innerHTML = `
+                <h3 class="text-xl font-semibold text-gray-800 mb-4">${scenario.title}</h3>
+                
+                <div class="space-y-4">
+                    <div class="flex items-center p-3 bg-blue-50 rounded-lg">
+                        <span class="text-2xl mr-3">🎯</span>
+                        <div>
+                            <span class="font-medium text-blue-800">Variabel Bebas:</span>
+                            <span class="text-blue-600"> ${scenario.variables.bebas}</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center p-3 bg-green-50 rounded-lg">
+                        <span class="text-2xl mr-3">📈</span>
+                        <div>
+                            <span class="font-medium text-green-800">Variabel Terikat:</span>
+                            <span class="text-green-600"> ${scenario.variables.terikat}</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center p-3 bg-purple-50 rounded-lg">
+                        <span class="text-2xl mr-3">🔗</span>
+                        <div>
+                            <span class="font-medium text-purple-800">Variabel Intervening:</span>
+                            <span class="text-purple-600"> ${scenario.variables.intervening}</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center p-3 bg-orange-50 rounded-lg">
+                        <span class="text-2xl mr-3">⚖️</span>
+                        <div>
+                            <span class="font-medium text-orange-800">Variabel Moderating:</span>
+                            <span class="text-orange-600"> ${scenario.variables.moderating}</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-4 p-4 bg-gray-100 rounded-lg">
+                    <p class="text-gray-700"><strong>Penjelasan:</strong> ${scenario.explanation}</p>
+                </div>
+            `;
+        }
+
+        function checkAnswer(selected) {
+            if (quizAnswered) return;
+            
+            const quiz = quizData[currentQuiz];
+            const options = document.querySelectorAll('.quiz-option');
+            const result = document.getElementById('quizResult');
+            const nextBtn = document.getElementById('nextBtn');
+            
+            quizAnswered = true;
+            
+            options.forEach((option, index) => {
+                if (index === quiz.correct) {
+                    option.classList.add('bg-green-100', 'border-green-500', 'border-2');
+                } else if (index === selected && selected !== quiz.correct) {
+                    option.classList.add('bg-red-100', 'border-red-500', 'border-2');
+                }
+                option.classList.remove('hover:bg-gray-100');
+            });
+            
+            const isCorrect = selected === quiz.correct;
+            result.innerHTML = `
+                <div class="flex items-center ${isCorrect ? 'text-green-700 bg-green-100' : 'text-red-700 bg-red-100'}">
+                    <span class="text-2xl mr-3">${isCorrect ? '✅' : '❌'}</span>
+                    <div>
+                        <p class="font-semibold">${isCorrect ? 'Benar!' : 'Salah!'}</p>
+                        <p class="text-sm">${quiz.explanation}</p>
+                    </div>
+                </div>
+            `;
+            
+            result.classList.remove('hidden');
+            nextBtn.classList.remove('hidden');
+        }
+
+        function nextQuestion() {
+            currentQuiz = (currentQuiz + 1) % quizData.length;
+            quizAnswered = false;
+            
+            const quiz = quizData[currentQuiz];
+            const question = document.getElementById('quizQuestion');
+            const options = document.querySelectorAll('.quiz-option');
+            const result = document.getElementById('quizResult');
+            const nextBtn = document.getElementById('nextBtn');
+            
+            question.textContent = quiz.question;
+            
+            options.forEach((option, index) => {
+                option.textContent = `${String.fromCharCode(65 + index)}. ${quiz.options[index]}`;
+                option.className = 'quiz-option w-full text-left p-4 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors';
+            });
+            
+            result.classList.add('hidden');
+            nextBtn.classList.add('hidden');
+        }
+
+        // Initialize first quiz question
+        nextQuestion();
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'982d8aba162862dc',t:'MTc1ODQ5OTQzNC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
